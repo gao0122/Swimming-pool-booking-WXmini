@@ -1,0 +1,34 @@
+.page-title {
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.scroll-view-item{
+  height: 384rpx;
+}
+
+.timeImg{  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+ 
+.coachButton[plain]{
+  padding: 0;
+  border:none;   
+  width: 100%;
+  height: 100%;
+}
+
+#blank {
+ height: 20rpx;
+}
+
+.left {
+  position: relative;
+  z-index: 2;
+  right: -73.49%;
+  top: -86.34%;
+}

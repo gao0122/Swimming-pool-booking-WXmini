@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/appt/appt",
+    "pages/myappt/myappt",
+    "pages/session/session",
+    "pages/coach/coach",
+    "pages/infos/infos",
+    "pages/time/time",
+    "pages/one/one"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

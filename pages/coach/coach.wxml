@@ -1,0 +1,31 @@
+
+<view class="page-title" style='height: 6vh'>
+  <text>选择教练</text>
+</view>
+
+<scroll-view scroll-y="true" style="height: 94vh; width:100vm;" scroll-into-view="{{toView}}" scroll-top="0">
+  <view class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="selected" data-index="1">
+      <image class="coachImg" src='/images/coach0.png'></image>
+    </button>
+    
+  </view> 
+  <view class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="selected" data-index="2">
+      <image class="coachImg" src='/images/coach1.png'></image>
+    </button>
+  </view>
+  <view class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="selected" data-index="3">
+      <image class="coachImg" src='/images/coach2.png'></image>
+    </button>
+  </view>
+  <view class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="selected" data-index="4">
+      <image class="coachImg" src='/images/coach3.png'></image>
+    </button>
+  </view>
+  <view id="blank">
+    
+  </view>
+</scroll-view>

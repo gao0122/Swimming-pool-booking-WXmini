@@ -1,0 +1,44 @@
+<!--pages/home.wxml-->
+<view>
+  <cover-image src="/images/header0.jpg"></cover-image>
+  
+  <scroll-view scroll-y="true">
+    <view class="buttonView" > 
+      <view class="login buttonItem"> 
+        <view class="userinfo-avatar">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+
+        <view class="buttonText"><button class="buttonText loginButton" bindgetuserinfo="onGetUserInfo" open-type="getUserInfo" ><open-data type="userNickName">
+          点击登录
+        </open-data></button></view>
+        
+      </view>
+
+      <view class="appointment buttonItem"> 
+        <view><button 
+          class="homeButton "
+          style="background-image: url('/images/appt.png')"
+          size="default"
+          bindtap="orderNow"
+        ></button></view>
+        
+        <view class="buttonText"><button class="buttonText" bindtap="orderNow">立即报名</button></view>
+        
+      </view>
+      <view class="myAppt buttonItem"> 
+        <view><button 
+          class="homeButton"
+          style="background-image: url('/images/myappt.png')"
+          size="default"
+          bindtap="myOrder"
+        ></button></view>
+        
+        <view class="buttonText"><button class="buttonText" bindtap="myOrder">我的报名</button></view>
+        
+      </view>
+    </view>
+    <cover-image src="/images/footer.png"></cover-image>
+
+  </scroll-view>
+</view> 

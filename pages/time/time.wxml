@@ -1,0 +1,53 @@
+
+<view class="page-title" style='height: 6vh'>
+  <text>选择培训时间</text>
+</view>
+
+<scroll-view scroll-y="true" style="height: 94vh; width:100vm;" scroll-into-view="{{toView}}" scroll-top="0">
+  <view class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="selected" data-index="1">
+      <image class="timeImg" src='/images/time{{date}}0.png'></image>
+    </button>
+    <text class='left'>（{{left[0]}}）</text>
+  </view> 
+  <view class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="selected" data-index="2">
+      <image class="timeImg" src='/images/time{{date}}1.png'></image>
+    </button>
+    <text class='left'>（{{left[1]}}）</text>
+  </view>
+  <view class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="selected" data-index="3">
+      <image class="timeImg" src='/images/time{{date}}2.png'></image>
+    </button>
+    <text class='left'>（{{left[2]}}）</text>
+  </view>
+  <view class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="selected" data-index="4">
+      <image class="timeImg" src='/images/time{{date}}3.png'></image>
+    </button>
+    <text class='left'>（{{left[3]}}）</text>
+  </view>
+  <view class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="selected" data-index="5">
+      <image class="timeImg" src='/images/time{{date}}4.png'></image>
+    </button>
+    <text class='left'>（{{left[4]}}）</text>
+  </view>
+  <view class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="selected" data-index="6">
+      <image class="timeImg" src='/images/time{{date}}5.png'></image>
+    </button>
+    <text class='left'>（{{left[5]}}）</text>
+  </view>
+  <view class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="selected" data-index="7">
+      <image class="timeImg" src='/images/time{{date}}6.png'></image>
+    </button>
+    <text class='left'>（{{left[6]}}）</text>
+  </view>
+  
+  <view id="blank">
+    
+  </view>
+</scroll-view>

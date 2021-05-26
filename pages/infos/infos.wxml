@@ -1,0 +1,31 @@
+<form catchsubmit="save" catchreset="formReset">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="weui-cells__title">孩子姓名</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="itsname" class="weui-input" auto-focus placeholder="请输入孩子的真实姓名"/>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">孩子年龄</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="age" class="weui-input" maxlength="2" bindinput="bindNextKeyboard" placeholder="请输入孩子的真实年龄" />
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">家长手机</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="phone" class="weui-input" maxlength="11" bindinput="bindHideKeyboard" placeholder="请输入家长的手机号码" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="save-view" >
+    <button class="save-btn" formType="submit">支付定金</button>
+  </view>
+</form>

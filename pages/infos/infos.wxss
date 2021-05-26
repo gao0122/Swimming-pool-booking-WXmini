@@ -1,0 +1,45 @@
+@import "../libs/weui.wxss";
+
+.page-body {
+  position: relative;
+  padding: 29rpx;
+  padding-bottom: 61rpx;
+  margin-top: 84rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 39rpx;
+  width: 80%;
+  background-color:teal;  
+  border-radius: 17px;
+}
+
+.weui-cells_after-title {
+  border-radius: 3px;
+}
+
+.weui-cells__title {
+  color: white;
+}
+
+.save-view {
+  text-align: center;
+  padding-top: auto;
+  padding-bottom: auto;
+  position: relative;
+  padding: 24rpx;
+  padding-top: 13rpx;
+  padding-bottom: 13rpx;
+  margin-top: 49rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 39rpx;
+  width: 80%;
+  background-color:teal;  
+  border-radius: 13px;
+}
+
+.save-btn {
+  background-color:teal;  
+  font-size:x-large;
+  color: white;
+}

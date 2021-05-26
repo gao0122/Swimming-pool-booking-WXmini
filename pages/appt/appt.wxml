@@ -1,0 +1,30 @@
+
+<view class="page-title" style='height: 6vh'>
+  <text>报名表</text>
+</view>
+
+<scroll-view scroll-y="true" style="height: 94vh; width:100vm;" scroll-into-view="{{toView}}" scroll-top="0">
+  <view id="date"  class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="dateOnClick">
+      <image class="coachImg" src='{{dateURL}}'></image>
+    </button>
+  </view>
+  <view id="coach" class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="coachOnClick">
+      <image class="coachImg" src='{{coachURL}}'></image>
+    </button>
+  </view> 
+  <view id="time" class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="timeOnClick">
+      <image class="coachImg" src='{{timeURL}}'></image>
+    </button>
+  </view>
+  <view id="info" class="scroll-view-item">
+    <button class="coachButton" plain="true" bindtap="infoOnClick">
+      <image class="coachImg" src='/images/infoButton.png'></image>
+    </button>
+  </view>
+  <view id="blank">
+    
+  </view>
+</scroll-view>
