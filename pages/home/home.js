@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userInfo: {},
+    hasUserInfo: false,
     authLogin: false,
     avatarUrl: '/images/user-unlogin.png',
     nickname: '',
@@ -84,6 +86,7 @@ Page({
 
   onGetUserInfo: function(e) {
     var that = this
+    var gd = getApp().globalData
     wx.login({
       success (res) {
         if (res) {
@@ -99,7 +102,7 @@ Page({
                 console.error(e)
               }
               wx.request({
-                url: 'https://www.bakesf.com/BakeSmallWXBackEnd/swimming/login',
+                url: gd.serverURL + gd.loginURL, 
                 method: 'post',
                 header: {
                   'content-type': 'application/x-www-form-urlencoded'
@@ -130,7 +133,7 @@ Page({
                 },
                 fail: function (e) {
                   wx.hideLoading();
-                  console.log('系统错误' + e.message)
+                  console.log(  e)
                 }
               })
 
@@ -147,6 +150,15 @@ Page({
       }
     })
 
+  },
+
+  getUserInfo: function() {
+    console.log(e)
+    getApp().globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
   },
 
   orderNow: function() {

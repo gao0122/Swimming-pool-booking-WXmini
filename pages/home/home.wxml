@@ -9,9 +9,11 @@
           <open-data type="userAvatarUrl"></open-data>
         </view>
 
-        <view class="buttonText"><button class="buttonText loginButton" bindgetuserinfo="onGetUserInfo" open-type="getUserInfo" ><open-data type="userNickName">
+        <view class="buttonText"><button class="buttonText loginButton" bindgetuserinfo="onGetUserInfo" open-type="getUserInfo" >
+          <open-data type="userNickName">
           点击登录
-        </open-data></button></view>
+          </open-data></button>
+        </view>
         
       </view>
 
