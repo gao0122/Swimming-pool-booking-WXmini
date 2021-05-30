@@ -38,7 +38,8 @@ Page({
 
   timeOnClick: function() {
     var date = getApp().globalData.date
-    var coach = getApp().globalData.date
+    var coach = getApp().globalData.coach
+    console.log(date, coach)
     if (date > 0) {
       if (coach > 0) {
         if (date < 5) {

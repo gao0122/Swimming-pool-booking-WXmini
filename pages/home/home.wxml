@@ -1,26 +1,34 @@
 <!--pages/home.wxml-->
 <view>
-  <cover-image src="/images/header0.jpg"></cover-image>
+  <cover-image src="../../images/header0.jpg"></cover-image>
   
   <scroll-view scroll-y="true">
     <view class="buttonView" > 
-      <view class="login buttonItem"> 
-        <view class="userinfo-avatar">
-          <open-data type="userAvatarUrl"></open-data>
-        </view>
+      
+      <view class="buttonItem avatarView"> 
 
-        <view class="buttonText"><button class="buttonText loginButton" bindgetuserinfo="onGetUserInfo" open-type="getUserInfo" >
-          <open-data type="userNickName">
-          点击登录
-          </open-data></button>
+          <view class='headView ' wx:if="{{userInfo}}" >
+            <open-data type="userAvatarUrl" class='icon'></open-data>
+          </view>
+          <button wx:else 
+          class="homeButton userinfo-avatar"
+          style="background-image: url({{avatarUrl}})"
+          size="default"
+          >
+          </button>
+        
+        <view class="buttonText">
+            <open-data type="userNickName" wx:if="{{userInfo}}" class="buttonText nameText">
+            </open-data>
+          <button wx:else class="buttonText loginButton" bindgetuserinfo="onGetUserInfo" open-type="getUserInfo">点击登录</button>
         </view>
         
       </view>
-
+      
       <view class="appointment buttonItem"> 
         <view><button 
           class="homeButton "
-          style="background-image: url('/images/appt.png')"
+          style="background-image: url('../../images/appt.png')"
           size="default"
           bindtap="orderNow"
         ></button></view>
@@ -28,6 +36,7 @@
         <view class="buttonText"><button class="buttonText" bindtap="orderNow">立即报名</button></view>
         
       </view>
+
       <view class="myAppt buttonItem"> 
         <view><button 
           class="homeButton"

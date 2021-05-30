@@ -1,15 +1,16 @@
+
 // pages/home.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
-    hasUserInfo: false,
+    userInfo: null,
     authLogin: false,
-    avatarUrl: '/images/user-unlogin.png',
-    nickname: '',
+    avatarUrl: '/images/user-unlogin.png'
   },
 
   /**
@@ -17,22 +18,7 @@ Page({
    */
   onLoad: function() {
     // 查看是否授权
-    var that = this
-    wx.getSetting({
-      success (res){
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function(res) {
-              that.setData({
-                avatarUrl: res.userInfo.avatarUrl,
-                nickName: res.userInfo.nickName,
-              })
-            }
-          })
-        }
-      }
-    })
+
   },
 
   /**
@@ -46,7 +32,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this    
+    wx.getSetting({
+      success (res){
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function(res) {
+              app.globalData.userInfo = res.userInfo
+              console.log(res.userInfo)
+              that.setData({
+                userInfo: res.userInfo,
+              })
+            }
+          })
+        }
+      }
+    })
+  
   },
 
   /**
@@ -101,6 +104,10 @@ Page({
               } catch (e) {
                 console.error(e)
               }
+              gd.userInfo = e.detail.userInfo
+              that.setData({
+                userInfo: e.detail.userInfo,
+              })
               wx.request({
                 url: gd.serverURL + gd.loginURL, 
                 method: 'post',
@@ -119,13 +126,10 @@ Page({
                   console.log(res);
                   var data = JSON.parse(res.data);
                   if (data.message == 'success') {
-                    that.setData({
-                      authLogin: true
-                    })
+                    that.setData(data.result)
+                    console.log('----' + data.result['userId']);
                     wx.setStorageSync("authLogin", true);
-                    console.log(data.result);
-                    // wx.setStorageSync("userId", data.result.voterId);
-                    // wx.setStorageSync("userToken", data.result.voterToken);
+                    wx.setStorageSync("userId", data.result['userId']);
                   } else {
                     console.log('解密失败!!!');
                   }
@@ -133,7 +137,7 @@ Page({
                 },
                 fail: function (e) {
                   wx.hideLoading();
-                  console.log(  e)
+                  console.log(e)
                 }
               })
 
@@ -152,8 +156,7 @@ Page({
 
   },
 
-  getUserInfo: function() {
-    console.log(e)
+  getUserInfo: function(e) {
     getApp().globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

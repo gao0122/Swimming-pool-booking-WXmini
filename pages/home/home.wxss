@@ -1,6 +1,19 @@
 /* pages/home.wxss */
 
-
+.headView {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin-top: 60rpx;
+  height:150rpx;
+  width:150rpx;
+  position:relative;
+  left: -134rpx;
+}
+.nameText {
+  position:relative;
+  top: 24rpx;
+}
 
 .userinfo-avatar {
   width: 160rpx;
@@ -25,6 +38,7 @@
   margin: 30rpx;
   border-radius: 10%;
   background-size: contain;
+
 }
 
 .homeButton[size] {
@@ -33,6 +47,7 @@
 
 .loginButton {
   margin-top: 30rpx;
+  left: -43rpx;
 }
 
 .buttonView {
@@ -40,6 +55,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
 }
 
 .buttonItem {
@@ -47,6 +63,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 75vw;
 }
 
 .buttonText {
@@ -54,4 +71,9 @@
   width: auto;
   font-size: larger;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.appointment {
+  position: relative;
+  top: 10rpx;
 }

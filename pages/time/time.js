@@ -5,8 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    left: ['余10位', '余10位', '余10位', '余10位', '余10位', '余10位', '余10位'],
-    date: 0,
+    left: [],//['余10位', '余10位', '余10位', '余10位', '余10位', '余10位', '余10位', '余10位'],
+    dateI: 0,
+    times: null,
   },
 
   /**
@@ -27,9 +28,43 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this
     var gd = getApp().globalData
-    this.setData({date: gd.date-1})
-    console.log(this.data)
+    this.setData({'dateI': gd.date-1})
+    console.log(this.data.dateI)
+    console.log(this.data.left)
+    console.log(gd.coach)
+    console.log(gd.date)
+    wx.request({
+      url: gd.serverURL + gd.leftURL,
+      method: 'GET',
+      data: {
+        'coachId': parseInt(gd.coach),
+        'periodId': parseInt(gd.date),
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success (res) {
+        var timeData = res.data.result 
+        console.log(timeData)
+        var lefts = []
+        for (var i = 0; i < 8; i++) {
+          var place = timeData[i]['places']
+  
+          if (parseInt(place) == 0) {
+            lefts[i] = '满班'
+          } else {
+            lefts[i] = '余' + place + '位'
+          }
+        }
+        that.setData({left: lefts})
+        that.setData({times: timeData})
+      },
+      fail (res) {
+        
+      }
+    })    
   },
 
   /**
@@ -69,8 +104,10 @@ Page({
 
   selected: function(e) {
     var selection = e.currentTarget.dataset['index']
+    var select = parseInt(selection)
     getApp().globalData.time = parseInt(selection)
-    
+    getApp().globalData.classId = this.data.times[select - 1]['id']
+    console.log(getApp().globalData)
     wx.navigateBack({
       url: '../appt/appt',
     })
