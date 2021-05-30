@@ -8,6 +8,8 @@ Page({
     left: [],//['余10位', '余10位', '余10位', '余10位', '余10位', '余10位', '余10位', '余10位'],
     dateI: 0,
     times: null,
+    imageURL: getApp().globalData.imageURL,
+
   },
 
   /**
@@ -107,10 +109,15 @@ Page({
     var select = parseInt(selection)
     getApp().globalData.time = parseInt(selection)
     getApp().globalData.classId = this.data.times[select - 1]['id']
-    console.log(getApp().globalData)
-    wx.navigateBack({
-      url: '../appt/appt',
-    })
-
+    if (this.data.times[select - 1]['places'] == '0') {
+      wx.showToast({
+        title: '此班已满员，请联系客服或选择其他时间',
+        duration: 1349,
+      })
+    } else {
+      wx.navigateBack({
+        url: '../appt/appt',
+      })
+    }
   }
 })

@@ -4,6 +4,8 @@ const app = getApp()
 
 Page({
   data: {
+    imageURL: getApp().globalData.imageURL,
+
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,

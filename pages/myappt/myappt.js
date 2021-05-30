@@ -5,12 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    coachURL: '/images/coachButton.png',
-    dateURL: '/images/dateButton.png',
-    timeURL: '/images/timeButton.png',
+    coachURL: 'coachButton.png',
+    dateURL: 'dateButton.png',
+    timeURL: 'timeButton.png',
     name: '高宇超',
     age: '19',
     phone: '13711121349',
+    imageURL: getApp().globalData.imageURL,
 
   },
 

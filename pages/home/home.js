@@ -10,7 +10,8 @@ Page({
   data: {
     userInfo: null,
     authLogin: false,
-    avatarUrl: '/images/user-unlogin.png'
+    avatarUrl: 'user-unlogin.png',
+    imageURL: getApp().globalData.imageURL,
   },
 
   /**
@@ -175,4 +176,8 @@ Page({
       url: '../myappt/myappt',
     })
   },
+
+  serviceTap: function() {
+    
+  }
 })

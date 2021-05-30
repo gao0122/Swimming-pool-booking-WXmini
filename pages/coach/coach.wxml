@@ -6,23 +6,23 @@
 <scroll-view scroll-y="true" style="height: 94vh; width:100vm;" scroll-into-view="{{toView}}" scroll-top="0">
   <view class="scroll-view-item">
     <button class="coachButton" plain="true" bindtap="selected" data-index="1">
-      <image class="coachImg" src='/images/coach0.png'></image>
+      <image class="coachImg" src='{{imageURL}}coach0.png'></image>
     </button>
     
   </view> 
   <view class="scroll-view-item">
     <button class="coachButton" plain="true" bindtap="selected" data-index="2">
-      <image class="coachImg" src='/images/coach1.png'></image>
+      <image class="coachImg" src='{{imageURL}}coach1.png'></image>
     </button>
   </view>
   <view class="scroll-view-item">
     <button class="coachButton" plain="true" bindtap="selected" data-index="3">
-      <image class="coachImg" src='/images/coach2.png'></image>
+      <image class="coachImg" src='{{imageURL}}coach2.png'></image>
     </button>
   </view>
   <view class="scroll-view-item">
     <button class="coachButton" plain="true" bindtap="selected" data-index="4">
-      <image class="coachImg" src='/images/coach3.png'></image>
+      <image class="coachImg" src='{{imageURL}}coach3.png'></image>
     </button>
   </view>
   <view id="blank">

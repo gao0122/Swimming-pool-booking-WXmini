@@ -6,19 +6,19 @@
 <scroll-view scroll-y="true" style="height: 94vh; width:100vm;" scroll-into-view="{{toView}}" scroll-top="0">
   <view class="scroll-view-item">
     <button class="sizeButton" plain="true" bindtap="selected" data-index="1">
-      <image class="timeImg" src='/images/time40.png'></image>
+      <image class="timeImg" src='{{imageURL}}time40.png'></image>
     </button>
   </view> 
 
   <view class="scroll-view-item">
     <button class="sizeButton" plain="true" bindtap="selected" data-index="2">
-      <image class="timeImg" src='/images/time41.png'></image>
+      <image class="timeImg" src='{{imageURL}}time41.png'></image>
     </button>
   </view>
 
   <view class="scroll-view-item">
     <button class="sizeButton" plain="true" bindtap="selected" data-index="3">
-      <image class="timeImg" src='/images/time42.png'></image>
+      <image class="timeImg" src='{{imageURL}}time42.png'></image>
     </button>
   </view>
 

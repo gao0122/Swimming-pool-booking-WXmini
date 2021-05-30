@@ -1,6 +1,6 @@
 <!--pages/home.wxml-->
 <view>
-  <cover-image src="../../images/header0.jpg"></cover-image>
+  <cover-image src="{{imageURL}}header0.jpg"></cover-image>
   
   <scroll-view scroll-y="true">
     <view class="buttonView" > 
@@ -12,7 +12,7 @@
           </view>
           <button wx:else 
           class="homeButton userinfo-avatar"
-          style="background-image: url({{avatarUrl}})"
+          style="background-image: url({{imageURL}}{{avatarUrl}})"
           size="default"
           >
           </button>
@@ -28,7 +28,7 @@
       <view class="appointment buttonItem"> 
         <view><button 
           class="homeButton "
-          style="background-image: url('../../images/appt.png')"
+          style="background-image: url('{{imageURL}}appt.png')"
           size="default"
           bindtap="orderNow"
         ></button></view>
@@ -40,7 +40,7 @@
       <view class="myAppt buttonItem"> 
         <view><button 
           class="homeButton"
-          style="background-image: url('/images/myappt.png')"
+          style="background-image: url('{{imageURL}}myappt.png')"
           size="default"
           bindtap="myOrder"
         ></button></view>
@@ -49,7 +49,7 @@
         
       </view>
     </view>
-    <cover-image src="/images/footer.png"></cover-image>
+    <cover-image src="{{imageURL}}footer.png"></cover-image>
 
   </scroll-view>
 </view> 
