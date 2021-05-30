@@ -6,16 +6,16 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    var that = this
-    wx.getUserInfo({
-      success: function (res) {
-        that.globalData.userInfo = res.userInfo
-        //console.log(that.globalData.userInfo)
-      },
-      fail: function () {
-     }
-    })
+    // // 登录
+    // var that = this
+    // wx.getUserInfo({
+    //   success: function (res) {
+    //     that.globalData.userInfo = res.userInfo
+    //     //console.log(that.globalData.userInfo)
+    //   },
+    //   fail: function () {
+    //  }
+    // })
 
   },
   globalData: {

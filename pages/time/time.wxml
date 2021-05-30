@@ -6,7 +6,7 @@
 <scroll-view scroll-y="true" style="height: 94vh; width:100vm;" scroll-into-view="{{toView}}" scroll-top="0">
   <view class="scroll-view-item">
     <button class="coachButton" plain="true" bindtap="selected" data-index="1">
-      <image class="timeImg" src='{{imageURL}}time{{dateI}}0.png'></image>
+      <image class="timeImg" src=' {{imageURL}}time{{dateI}}0.png'></image>
       <text class='left'>（{{left[0]}}）</text>
     </button>
   </view> 

@@ -47,6 +47,7 @@ Page({
               })
             }
           })
+          that.onGetUserInfo()
         }
       }
     })
@@ -101,13 +102,13 @@ Page({
                 title: '登录中',
               })
               try {
-                wx.setStorageSync('userInfo', e.detail.userInfo)
+                wx.setStorageSync('userInfo', res.userInfo)
               } catch (e) {
                 console.error(e)
               }
-              gd.userInfo = e.detail.userInfo
+              gd.userInfo = res.userInfo
               that.setData({
-                userInfo: e.detail.userInfo,
+                userInfo: res.userInfo,
               })
               wx.request({
                 url: gd.serverURL + gd.loginURL, 
@@ -141,15 +142,10 @@ Page({
                   console.log(e)
                 }
               })
-
-              // console.log(userInfo)
-              // that.setData({
-              //   nickname: userInfo.nickName,
-              //   avatarUrl: userInfo.avatarUrl,
-              // })
             }
           })
         } else {
+          wx.hideLoading()
           console.log('登录失败！' + res.errMsg)
         }
       }

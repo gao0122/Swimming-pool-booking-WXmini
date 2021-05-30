@@ -28,7 +28,7 @@
 
 .left {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   right: -73.49%;
   top: -86.34%;
 }
