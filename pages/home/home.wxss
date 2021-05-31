@@ -97,10 +97,12 @@
 
 .md {
   z-index: 5;
+
 }
 .image {
-  display:flex;
   position: relative;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   margin-left: auto;
   margin-right: auto;

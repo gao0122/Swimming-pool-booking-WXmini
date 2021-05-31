@@ -1,10 +1,14 @@
 <!--pages/home.wxml-->
-<view>
-  <cover-image src="{{imageURL}}header0.jpg"></cover-image>
+<view>  
+  <modal title="游泳培训班人工客服" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel" class="md">
+    <view>
+    <image class="image" src="{{imageURL}}qrcode.png" mode='aspectFit'></image>
+    </view>
+  </modal>
   
-  <scroll-view scroll-y="true">
+  <scroll-view scroll-y="true" hidden="{{!modalHidden}}">
+    <cover-image src="{{imageURL}}header0.jpg" ></cover-image>
     <view class="buttonView" > 
-      
       <view class="buttonItem avatarView"> 
         <view wx:if="{{userInfo}}" >
           <view class='headView'>
@@ -51,13 +55,7 @@
         ></button></view>
         
         <view class="buttonText"><button class="buttonText" bindtap="myOrder">我的报名</button></view>
-        
-      </view>      
-      <modal title="游泳培训班人工客服" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel" class="md">
-        <view>
-        <image class="image" src="{{imageURL}}qrcode.png" mode='aspectFit'></image>
-        </view>
-      </modal>
+      </view>
 
       <view class="myAppt buttonItem"> 
         <view><button 
@@ -72,6 +70,5 @@
       </view>
     </view>
     <cover-image src="{{imageURL}}footer.png"></cover-image>
-
   </scroll-view>
 </view> 
