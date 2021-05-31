@@ -1,28 +1,33 @@
+<!--pages/oneAppt/oneApt.wxml-->
 
 <view class="page-title" style='height: 6vh'>
   <text>我的报名</text>
 </view>
 
 <scroll-view scroll-y="true" style="height: 94vh; width:100vm;" scroll-into-view="{{toView}}" scroll-top="0">
+
   <view id="info" class="scroll-view-item">
-    <button class="coachButton" plain="true" bindtap="infoOnClick">
-      <image class="coachImg" src='{{imageURL}}infoBg.png'></image>
+    <button class="coachButton" plain="true" >
+      <image class="coachImg" src='{{imageURL}}infoBg.png'>
+      </image>
     </button>
     <text class='name'>姓名：{{name}}</text>
     <text class='age'>年龄：{{age}}</text>
     <text class='phone'>手机：{{phone}}</text>
-
   </view>
+
   <view id="date"  class="scroll-view-item">
     <button class="coachButton" plain="true" bindtap="dateOnClick">
       <image class="coachImg" src='{{imageURL}}{{dateURL}}'></image>
     </button>
   </view>
+
   <view id="coach" class="scroll-view-item">
     <button class="coachButton" plain="true" bindtap="coachOnClick">
       <image class="coachImg" src='{{imageURL}}{{coachURL}}'></image>
     </button>
   </view> 
+  
   <view id="time" class="scroll-view-item">
     <button class="coachButton" plain="true" bindtap="timeOnClick">
       <image class="coachImg" src='{{imageURL}}{{timeURL}}'></image>

@@ -6,20 +6,23 @@
     <view class="buttonView" > 
       
       <view class="buttonItem avatarView"> 
-
-          <view class='headView ' wx:if="{{userInfo}}" >
-            <open-data type="userAvatarUrl" class='icon'></open-data>
+        <view wx:if="{{userInfo}}" >
+          <view class='headView'>
+            <open-data type="userAvatarUrl"></open-data>
           </view>
-          <button wx:else 
+        </view>
+        <view  wx:else >
+          <button
           class="homeButton userinfo-avatar"
           style="background-image: url({{imageURL}}{{avatarUrl}})"
           size="default"
           >
           </button>
-        
+        </view>
+      
         <view class="buttonText">
-            <open-data type="userNickName" wx:if="{{userInfo}}" class="buttonText nameText">
-            </open-data>
+          <open-data type="userNickName" wx:if="{{userInfo}}" class="buttonText nameText">
+          </open-data>
           <button wx:else class="buttonText loginButton" bindgetuserinfo="onGetUserInfo" open-type="getUserInfo">点击登录</button>
         </view>
         
@@ -33,7 +36,9 @@
           bindtap="orderNow"
         ></button></view>
         
-        <view class="buttonText"><button class="buttonText" bindtap="orderNow">立即报名</button></view>
+        <view class="buttonText">
+          <button class="buttonText" bindtap="orderNow">立即报名</button>
+        </view>
         
       </view>
 
@@ -46,6 +51,23 @@
         ></button></view>
         
         <view class="buttonText"><button class="buttonText" bindtap="myOrder">我的报名</button></view>
+        
+      </view>      
+      <modal title="游泳培训班人工客服" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel" class="md">
+        <view>
+        <image class="image" src="{{imageURL}}qrcode.png" mode='aspectFit'></image>
+        </view>
+      </modal>
+
+      <view class="myAppt buttonItem"> 
+        <view><button 
+          class="homeButton"
+          style="background-image: url('{{imageURL}}qrcode.png');background-size:cover;"
+          size="default"
+          bindtap="findxiaoyu"
+        ></button></view>
+        
+        <view class="buttonText"><button class="buttonText" bindtap="findxiaoyu">客服微信</button></view>
         
       </view>
     </view>

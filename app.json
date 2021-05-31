@@ -7,7 +7,8 @@
     "pages/coach/coach",
     "pages/infos/infos",
     "pages/time/time",
-    "pages/one/one"
+    "pages/one/one",
+    "pages/oneApt/oneApt"
   ],
   "window": {
     "backgroundTextStyle": "light",

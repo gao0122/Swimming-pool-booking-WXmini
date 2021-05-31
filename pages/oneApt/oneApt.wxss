@@ -1,3 +1,22 @@
+/* pages/oneAppt/oneApt.wxss */
+.name, .age, .phone {
+  font-size:x-large;
+  color: rgb(23, 23, 23);
+  left: 21.49%;
+  z-index: 2;
+  position: absolute;
+  background-size: cover;
+}
+.name {
+  top: 4.8%;
+}
+.age {
+  top: 11.8%;
+}
+.phone {
+  top: 18.8%;
+}
+
 .page-title {
   display: flex;
   justify-content: center;
@@ -8,13 +27,11 @@
   height: 384rpx;
 }
 
-.timeImg{  
+.coachImg{  
   display: flex;
   justify-content: center;
   width: 100%;
   height: 100%;
-  position: relative;
-  top: -48rpx;
 }
  
 .coachButton[plain]{
@@ -26,17 +43,4 @@
 
 #blank {
  height: 20rpx;
-}
-
-.left {
-  position: absolute;
-  z-index: 2;
-  right: 5.1%;
-  top: 3.9%;
-}
-.left1 {
-  position: relative;
-  z-index: 2;
-  right: -35%;
-  top: 52rpx;
 }

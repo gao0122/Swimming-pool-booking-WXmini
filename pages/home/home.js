@@ -12,6 +12,7 @@ Page({
     authLogin: false,
     avatarUrl: 'user-unlogin.png',
     imageURL: getApp().globalData.imageURL,
+    modalHidden: true,
   },
 
   /**
@@ -19,7 +20,23 @@ Page({
    */
   onLoad: function() {
     // 查看是否授权
-
+    var that = this    
+    wx.getSetting({
+      success (res){
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function(res) {
+              app.globalData.userInfo = res.userInfo
+              that.setData({
+                userInfo: res.userInfo,
+              })
+            }
+          })
+        }
+        that.onGetUserInfo()
+      }
+    })
   },
 
   /**
@@ -53,6 +70,8 @@ Page({
           } else {
             that.onGetUserInfo()
           }
+        } else {
+          that.onGetUserInfo()
         }
       }
     })
@@ -101,6 +120,7 @@ Page({
       success (res) {
         if (res) {
           var code = res.code
+
           wx.getUserInfo({
             success: function(res) {
               wx.showLoading({
@@ -115,6 +135,7 @@ Page({
               that.setData({
                 userInfo: res.userInfo,
               })
+     
               wx.request({
                 url: gd.serverURL + gd.loginURL, 
                 method: 'post',
@@ -176,7 +197,22 @@ Page({
     })
   },
 
-  serviceTap: function() {
-    
-  }
+  findxiaoyu: function() {
+    this.setData({
+      modalHidden: false,
+    })
+  },
+
+  modalCandel() {
+    this.setData({
+      modalHidden: true,
+    })
+  },
+
+  modalConfirm() {
+    this.setData({
+      modalHidden: true,
+    })
+  },
+
 })

@@ -5,50 +5,50 @@
 
 <scroll-view scroll-y="true" style="height: 94vh; width:100vm;" scroll-into-view="{{toView}}" scroll-top="0">
   <view class="scroll-view-item">
-    <text class='left0'>（{{left[0]}}）</text>
     <button class="coachButton" plain="true" bindtap="selected" data-index="1">
+      <text class='left1'>（{{left[0]}}）</text>
       <image class="timeImg" src=' {{imageURL}}time{{dateI}}0.png'></image>
     </button>
   </view>
   <view class="scroll-view-item">
-    <text class='left1'>（{{left[1]}}）</text>
     <button class="coachButton" plain="true" bindtap="selected" data-index="2">
+      <text class='left1'>（{{left[1]}}）</text>
       <image class="timeImg" src=' {{imageURL}}time{{dateI}}1.png'></image>
     </button>
   </view>
   <view class="scroll-view-item">
-    <text class='left2'>（{{left[2]}}）</text>
     <button class="coachButton" plain="true" bindtap="selected" data-index="3">
+      <text class='left1'>（{{left[2]}}）</text>
       <image class="timeImg" src=' {{imageURL}}time{{dateI}}2.png'></image>
     </button>
   </view>
   <view class="scroll-view-item">
-    <text class='left3'>（{{left[3]}}）</text>
     <button class="coachButton" plain="true" bindtap="selected" data-index="4">
+      <text class='left1'>（{{left[3]}}）</text>
       <image class="timeImg" src=' {{imageURL}}time{{dateI}}3.png'></image>
     </button>
   </view>
   <view class="scroll-view-item">
-    <text class='left4'>（{{left[4]}}）</text>
     <button class="coachButton" plain="true" bindtap="selected" data-index="5">
+      <text class='left1'>（{{left[4]}}）</text>
       <image class="timeImg" src=' {{imageURL}}time{{dateI}}4.png'></image>
     </button>
   </view>
   <view class="scroll-view-item">
-    <text class='left5'>（{{left[5]}}）</text>
     <button class="coachButton" plain="true" bindtap="selected" data-index="6">
+      <text class='left1'>（{{left[5]}}）</text>
       <image class="timeImg" src=' {{imageURL}}time{{dateI}}5.png'></image>
     </button>
   </view>
   <view class="scroll-view-item">
-    <text class='left6'>（{{left[6]}}）</text>
     <button class="coachButton" plain="true" bindtap="selected" data-index="7">
+      <text class='left1'>（{{left[6]}}）</text>
       <image class="timeImg" src=' {{imageURL}}time{{dateI}}6.png'></image>
     </button>
   </view>  
   <view class="scroll-view-item">
-    <text class='left7'>（{{left[7]}}）</text>
     <button class="coachButton" plain="true" bindtap="selected" data-index="8">
+      <text class='left1'>（{{left[7]}}）</text>
       <image class="timeImg" src=' {{imageURL}}time{{dateI}}7.png'></image>
     </button>
   </view>
