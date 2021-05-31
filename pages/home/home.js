@@ -1,4 +1,3 @@
-
 // pages/home.js
 const app = getApp()
 
@@ -27,6 +26,7 @@ Page({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
             success: function(res) {
+              console.log(res.userInfo)
               app.globalData.userInfo = res.userInfo
               that.setData({
                 userInfo: res.userInfo,
@@ -34,7 +34,6 @@ Page({
             }
           })
         }
-        that.onGetUserInfo()
       }
     })
   },
@@ -58,20 +57,11 @@ Page({
           wx.getUserInfo({
             success: function(res) {
               app.globalData.userInfo = res.userInfo
-              console.log(res.userInfo)
               that.setData({
                 userInfo: res.userInfo,
               })
             }
           })
-          var userId = wx.getStorageSync('userId')
-          if (userId > 0) {
-            
-          } else {
-            that.onGetUserInfo()
-          }
-        } else {
-          that.onGetUserInfo()
         }
       }
     })
@@ -120,7 +110,6 @@ Page({
       success (res) {
         if (res) {
           var code = res.code
-
           wx.getUserInfo({
             success: function(res) {
               wx.showLoading({
@@ -135,7 +124,7 @@ Page({
               that.setData({
                 userInfo: res.userInfo,
               })
-     
+              console.log(res.userInfo)
               wx.request({
                 url: gd.serverURL + gd.loginURL, 
                 method: 'post',
@@ -152,6 +141,7 @@ Page({
                 dataType: JSON,
                 success: function (res) {
                   var data = JSON.parse(res.data);
+                  console.log(data)
                   if (data.message == 'success') {
                     that.setData(data.result)
                     wx.setStorageSync("authLogin", true);

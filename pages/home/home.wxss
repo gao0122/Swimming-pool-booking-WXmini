@@ -9,11 +9,6 @@
   width:150rpx;
 }
 
-.nameText {
-  position:relative;
-  top: 24rpx;
-}
-
 .userinfo-avatar {
   width: 160rpx;
   height: 160rpx;
@@ -92,7 +87,9 @@
   justify-content: center;
   align-items:center;
   position: relative;
-  left: 15vw;
+  top: 24rpx;
+  left: 12vw;
+  width: 228rpx;
 }
 
 .md {

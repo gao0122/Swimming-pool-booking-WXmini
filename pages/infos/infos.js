@@ -79,7 +79,6 @@ Page({
   },
   bindNameKeyboard: function (e) {
     getApp().globalData.name = e.detail.value
-    console.log(getApp().globalData.name)
   },
 
   bindAgeKeyboard: function (e) {
@@ -135,7 +134,6 @@ Page({
         console.log(res)
       }
     })
-
   },
 
   sign: function (prepay_id) {
@@ -152,12 +150,14 @@ Page({
       },
       success (res) {
         that.requestPayment(res.data)
+      },
+      fail (res) {
+        console.log(res)
       }
     })
   },
 
   requestPayment: function (obj) {
-    var that = this
     wx.requestPayment({
       timeStamp: obj.timeStamp,
       nonceStr: obj.nonceStr,
