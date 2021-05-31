@@ -108,6 +108,7 @@ Page({
     var selection = e.currentTarget.dataset['index']
     var select = parseInt(selection)
     getApp().globalData.time = parseInt(selection)
+    console.log(this.data.times)
     getApp().globalData.classId = this.data.times[select - 1]['id']
     if (this.data.times[select - 1]['places'] == '0') {
       wx.showToast({

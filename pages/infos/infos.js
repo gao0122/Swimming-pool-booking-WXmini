@@ -6,14 +6,20 @@ Page({
    */
   data: {
     imageURL: getApp().globalData.imageURL,
-
+    name: getApp().globalData.name,
+    phone: getApp().globalData.phone,
+    age: getApp().globalData.age,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      name: getApp().globalData.name,
+      phone: getApp().globalData.phone,
+      age: getApp().globalData.age,  
+    })
   },
 
   /**
@@ -67,26 +73,45 @@ Page({
 
   bindHideKeyboard: function (e) {
     if (e.detail.value.length === 11) {
-      // 收起键盘
+      getApp().globalData.phone = e.detail.value
       wx.hideKeyboard()
     }
   },
-  bindNextKeyboard: function (e) {
-    if (e.detail.value.length === 11) {
-      // 收起键盘
-      
-    }
+  bindNameKeyboard: function (e) {
+    getApp().globalData.name = e.detail.value
+    console.log(getApp().globalData.name)
+  },
+
+  bindAgeKeyboard: function (e) {
+    getApp().globalData.age = e.detail.value
   },
 
   save: function(e) {
+    var infos = e.detail.value
+    if (infos['itsname'].length == 0) {
+      wx.showToast({
+        title: '请填写姓名',
+      })
+      return
+    }
+    if (infos['age'].length == 0) {
+      wx.showToast({
+        title: '请填写年龄',
+      })
+      return
+    }
+    if (infos['phone'].length == 0) {
+      wx.showToast({
+        title: '请填写手机号码',
+      })
+      return
+    }
     wx.showLoading({
       title: '支付中...',
     })
-    var infos = e.detail.value
     var gd = getApp().globalData
     var that = this
     var userId = wx.getStorageSync('userId')
-    console.log(userId)
     wx.request({
       url: gd.serverURL + gd.orderURL,
       method: 'POST',
@@ -144,7 +169,9 @@ Page({
           url: '../myappt/myappt',
         });
       },
-      fail: function (res) {},
+      fail: function (res) {
+        console.log(res)
+      },
     })
 
   

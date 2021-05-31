@@ -67,8 +67,9 @@ Page({
 
   selected: function(e) {
     var selection = e.currentTarget.dataset['index']
-    getApp().globalData.one = parseInt(selection)
-    
+    var select = parseInt(selection)
+    getApp().globalData.one = select
+    getApp().globalData.classId = select
     wx.navigateBack({
       url: '../appt/appt',
     })

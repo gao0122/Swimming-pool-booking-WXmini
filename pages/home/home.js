@@ -47,7 +47,12 @@ Page({
               })
             }
           })
-          that.onGetUserInfo()
+          var userId = wx.getStorageSync('userId')
+          if (userId > 0) {
+            
+          } else {
+            that.onGetUserInfo()
+          }
         }
       }
     })
@@ -125,11 +130,9 @@ Page({
                 },
                 dataType: JSON,
                 success: function (res) {
-                  console.log(res);
                   var data = JSON.parse(res.data);
                   if (data.message == 'success') {
                     that.setData(data.result)
-                    console.log('----' + data.result['userId']);
                     wx.setStorageSync("authLogin", true);
                     wx.setStorageSync("userId", data.result['userId']);
                   } else {

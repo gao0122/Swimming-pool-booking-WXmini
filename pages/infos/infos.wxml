@@ -4,7 +4,7 @@
       <view class="weui-cells__title">孩子姓名</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input name="itsname" class="weui-input" auto-focus placeholder="请输入孩子的真实姓名"/>
+          <input name="itsname" class="weui-input" auto-focus placeholder="请输入孩子的真实姓名" value='{{name}}' bindinput="bindNameKeyboard" />
         </view>
       </view>
     </view>
@@ -12,7 +12,7 @@
       <view class="weui-cells__title">孩子年龄</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input name="age" class="weui-input" maxlength="2" type="number" bindinput="bindNextKeyboard" placeholder="请输入孩子的真实年龄" />
+          <input value='{{age}}' name="age" class="weui-input" maxlength="2" type="number" bindinput="bindAgeKeyboard" placeholder="请输入孩子的真实年龄" />
         </view>
       </view>
     </view>
@@ -20,7 +20,7 @@
       <view class="weui-cells__title">家长手机</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input name="phone" class="weui-input" maxlength="11" type="number" bindinput="bindHideKeyboard" placeholder="请输入家长的手机号码" />
+          <input value='{{phone}}' name="phone" class="weui-input" maxlength="11" type="number" bindinput="bindHideKeyboard" placeholder="请输入家长的手机号码" />
         </view>
       </view>
     </view>

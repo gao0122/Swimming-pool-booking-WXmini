@@ -26,9 +26,51 @@
  height: 20rpx;
 }
 
-.left {
-  position: relative;
-  z-index: 3;
-  right: -73.49%;
-  top: -86.34%;
+.left0 {
+  position: absolute;
+  z-index: 2;
+  right: 5.1%;
+  top: 3.9%;
+}
+.left1 {
+  position: absolute;
+  z-index: 2;
+  right: 5.1%;
+  top: 31.7%;
+}
+.left2 {
+  position: absolute;
+  z-index: 2;
+  right: 5.1%;
+  top: 59.08%;
+}
+.left3 {
+  position: absolute;
+  z-index: 2;
+  right: 5.1%;
+  top: 86.67%;
+}
+.left4 {
+  position: absolute;
+  z-index: 2;
+  right: 5.1%;
+  top: 114.26%;
+}
+.left5 {
+  position: absolute;
+  z-index: 2;
+  right: 5.1%;
+  top: 141.85%;
+}
+.left6 {
+  position: absolute;
+  z-index: 2;
+  right: 5.1%;
+  top: 169.44%;
+}
+.left7 {
+  position: absolute;
+  z-index: 2;
+  right: 5.1%;
+  top: 197.03%;
 }

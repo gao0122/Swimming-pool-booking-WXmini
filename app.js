@@ -20,7 +20,7 @@ App({
   },
   globalData: {
     imageURL: 'https://huolue-images.oss-cn-shenzhen.aliyuncs.com/images/',
-    serverURL: 'http://192.168.10.109:8300/swimming/',//"https://www.bakesf.com/BakeSmallWXBackEnd/swimming/",
+    serverURL: "https://www.bakesf.com/BakeSmallWXBackEnd/swimming/",
     loginURL: "login",
     dateURL: "getPeriodByUserId",
     timeURL: "getScheduleByPeriodId",
@@ -34,6 +34,7 @@ App({
     time: 0,
     one: 0,
     classId: 0,
+    age: '',
     name: '',
     phone: '',
     coachTime: [],
