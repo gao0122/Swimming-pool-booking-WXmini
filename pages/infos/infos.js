@@ -110,7 +110,7 @@ Page({
     })
     var gd = getApp().globalData
     var that = this
-    var userId = wx.getStorageSync('userId')
+    var userId = wx.getStorage('userId')
     wx.request({
       url: gd.serverURL + gd.orderURL,
       method: 'POST',
@@ -120,9 +120,9 @@ Page({
       data: {
         "childrenAge": parseInt(infos['age']),
         "childrenName": infos['itsname'],
+        "cost": 100,
         "phone": infos['phone'],
         "scheduleId": gd.classId,
-        "cost": 100,
         "userId": userId,
       },
       success (res) {

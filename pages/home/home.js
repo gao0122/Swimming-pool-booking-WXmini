@@ -12,6 +12,7 @@ Page({
     avatarUrl: 'user-unlogin.png',
     imageURL: getApp().globalData.imageURL,
     modalHidden: true,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
 
   /**
@@ -105,26 +106,26 @@ Page({
 
   onGetUserInfo: function(e) {
     var that = this
-    var gd = getApp().globalData
+    var gd = app.globalData
+    wx.showLoading({
+      title: '登录中',
+    })
     wx.login({
       success (res) {
         if (res) {
           var code = res.code
           wx.getUserInfo({
             success: function(res) {
-              wx.showLoading({
-                title: '登录中',
-              })
               try {
-                wx.setStorageSync('userInfo', res.userInfo)
+                wx.setStorageSync('userInfo', e.detail.userInfo)
               } catch (e) {
                 console.error(e)
               }
-              gd.userInfo = res.userInfo
+              gd.userInfo = e.detail.userInfo
               that.setData({
-                userInfo: res.userInfo,
+                userInfo: e.detail.userInfo,
               })
-              console.log(res.userInfo)
+              console.log(e.detail.userInfo)
               wx.request({
                 url: gd.serverURL + gd.loginURL, 
                 method: 'post',
@@ -144,6 +145,9 @@ Page({
                   console.log(data)
                   if (data.message == 'success') {
                     that.setData(data.result)
+                    this.setData({
+                      authLogin: true,
+                    })
                     wx.setStorageSync("authLogin", true);
                     wx.setStorageSync("userId", data.result['userId']);
                   } else {
@@ -168,7 +172,7 @@ Page({
   },
 
   getUserInfo: function(e) {
-    getApp().globalData.userInfo = e.detail.userInfo
+    app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
