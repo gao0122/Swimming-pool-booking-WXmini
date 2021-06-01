@@ -9,6 +9,7 @@ Page({
     name: getApp().globalData.name,
     phone: getApp().globalData.phone,
     age: getApp().globalData.age,
+    uid: wx.getStorageSync('userId'),
   },
 
   /**
@@ -110,7 +111,7 @@ Page({
     })
     var gd = getApp().globalData
     var that = this
-    var userId = wx.getStorage('userId')
+    console.log('pay ' + that.data.uid + ' ' + gd.classId)
     wx.request({
       url: gd.serverURL + gd.orderURL,
       method: 'POST',
@@ -123,7 +124,7 @@ Page({
         "cost": 100,
         "phone": infos['phone'],
         "scheduleId": gd.classId,
-        "userId": userId,
+        "userId": that.data.uid,
       },
       success (res) {
         console.log(res.data);

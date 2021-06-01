@@ -145,7 +145,7 @@ Page({
                   console.log(data)
                   if (data.message == 'success') {
                     that.setData(data.result)
-                    this.setData({
+                    that.setData({
                       authLogin: true,
                     })
                     wx.setStorageSync("authLogin", true);

@@ -49,6 +49,5 @@ App({
     age: '',
     name: '',
     phone: '',
-    coachTime: [],
   }
 })
